@@ -2,7 +2,11 @@
   "name": "ai-powered-campus-monorepo",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "frontend"
+  ],
   "scripts": {
+    "install:frontend": "npm install --prefix frontend",
     "build": "npm run build --prefix frontend",
     "dev": "npm run dev --prefix frontend"
   }
