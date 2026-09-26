@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  campus-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai_campus_simulation
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - SECRET_KEY=production-secure-random-secret-key-2026
+      - JWT_SECRET_KEY=production-secure-jwt-secret-key-2026
+      - DATABASE_URL=sqlite:////app/instance/campus_simulation.db
+      - CORS_ORIGINS=*
+    volumes:
+      - campus_data:/app/instance
+    restart: unless-stopped
+
+volumes:
+  campus_data:
+    driver: local

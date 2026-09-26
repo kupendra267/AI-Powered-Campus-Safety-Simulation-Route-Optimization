@@ -1,0 +1,554 @@
+{
+  "model_version": "v1.0.0",
+  "model_name": "Gradient Boosting Regressor",
+  "dataset_type": "Synthetic/Simulation Data \u2014 For Academic Demonstration",
+  "dataset_size": 1440,
+  "train_size": 1007,
+  "val_size": 217,
+  "test_size": 216,
+  "test_metrics": {
+    "mae": 40.118,
+    "rmse": 80.465,
+    "r2_score": 0.8573
+  },
+  "validation_metrics": {
+    "mae": 28.592,
+    "rmse": 51.108,
+    "r2_score": 0.9293
+  },
+  "all_model_comparisons": {
+    "Linear Regression (Baseline)": {
+      "train": {
+        "mae": 72.021,
+        "rmse": 111.279,
+        "r2_score": 0.6787
+      },
+      "validation": {
+        "mae": 71.448,
+        "rmse": 109.517,
+        "r2_score": 0.6755
+      }
+    },
+    "Random Forest Regressor": {
+      "train": {
+        "mae": 14.631,
+        "rmse": 26.534,
+        "r2_score": 0.9817
+      },
+      "validation": {
+        "mae": 33.0,
+        "rmse": 53.023,
+        "r2_score": 0.9239
+      }
+    },
+    "HistGradientBoosting Regressor": {
+      "train": {
+        "mae": 18.078,
+        "rmse": 30.458,
+        "r2_score": 0.9759
+      },
+      "validation": {
+        "mae": 32.967,
+        "rmse": 56.004,
+        "r2_score": 0.9151
+      }
+    },
+    "Gradient Boosting Regressor": {
+      "train": {
+        "mae": 9.4,
+        "rmse": 12.004,
+        "r2_score": 0.9963
+      },
+      "validation": {
+        "mae": 28.592,
+        "rmse": 51.108,
+        "r2_score": 0.9293
+      }
+    }
+  },
+  "feature_importances": [
+    {
+      "feature": "previous_crowd",
+      "importance": 0.6617
+    },
+    {
+      "feature": "cos_hour",
+      "importance": 0.1072
+    },
+    {
+      "feature": "rolling_average_3h",
+      "importance": 0.044
+    },
+    {
+      "feature": "facility_type_ACADEMIC",
+      "importance": 0.0378
+    },
+    {
+      "feature": "sin_hour",
+      "importance": 0.0359
+    },
+    {
+      "feature": "capacity",
+      "importance": 0.0304
+    },
+    {
+      "feature": "lag_2_crowd",
+      "importance": 0.03
+    },
+    {
+      "feature": "previous_density",
+      "importance": 0.0135
+    },
+    {
+      "feature": "location_id_7",
+      "importance": 0.0105
+    },
+    {
+      "feature": "facility_type_CANTEEN",
+      "importance": 0.0099
+    },
+    {
+      "feature": "facility_type_AUDITORIUM",
+      "importance": 0.0036
+    },
+    {
+      "feature": "location_id_8",
+      "importance": 0.0023
+    },
+    {
+      "feature": "location_id_6",
+      "importance": 0.002
+    },
+    {
+      "feature": "facility_type_HOSTEL",
+      "importance": 0.0019
+    },
+    {
+      "feature": "facility_type_SPORTS",
+      "importance": 0.0019
+    }
+  ],
+  "test_evaluation_samples": [
+    {
+      "timestamp": "2026-09-25T06:00:00+00:00",
+      "location_name": "Admin Complex Hub",
+      "actual_crowd": 11,
+      "predicted_crowd": 14,
+      "capacity": 300
+    },
+    {
+      "timestamp": "2026-09-25T06:00:00+00:00",
+      "location_name": "Mechanical Quad Hub",
+      "actual_crowd": 12,
+      "predicted_crowd": 28,
+      "capacity": 600
+    },
+    {
+      "timestamp": "2026-09-25T06:00:00+00:00",
+      "location_name": "Sports Arena Entrance",
+      "actual_crowd": 242,
+      "predicted_crowd": 251,
+      "capacity": 450
+    },
+    {
+      "timestamp": "2026-09-25T06:00:00+00:00",
+      "location_name": "Research Park Hub",
+      "actual_crowd": 26,
+      "predicted_crowd": 21,
+      "capacity": 350
+    },
+    {
+      "timestamp": "2026-09-25T07:00:00+00:00",
+      "location_name": "Electrical Sciences Hub",
+      "actual_crowd": 13,
+      "predicted_crowd": 29,
+      "capacity": 650
+    },
+    {
+      "timestamp": "2026-09-25T07:00:00+00:00",
+      "location_name": "Food Court Square",
+      "actual_crowd": 252,
+      "predicted_crowd": 219,
+      "capacity": 550
+    },
+    {
+      "timestamp": "2026-09-25T07:00:00+00:00",
+      "location_name": "Beta Hostel Quad",
+      "actual_crowd": 431,
+      "predicted_crowd": 364,
+      "capacity": 500
+    },
+    {
+      "timestamp": "2026-09-25T08:00:00+00:00",
+      "location_name": "CS & AI Complex Hub",
+      "actual_crowd": 545,
+      "predicted_crowd": 554,
+      "capacity": 800
+    },
+    {
+      "timestamp": "2026-09-25T08:00:00+00:00",
+      "location_name": "Auditorium Plaza",
+      "actual_crowd": 144,
+      "predicted_crowd": 112,
+      "capacity": 1000
+    },
+    {
+      "timestamp": "2026-09-25T08:00:00+00:00",
+      "location_name": "Alpha Hostel Quad",
+      "actual_crowd": 64,
+      "predicted_crowd": 103,
+      "capacity": 500
+    },
+    {
+      "timestamp": "2026-09-25T09:00:00+00:00",
+      "location_name": "Admin Complex Hub",
+      "actual_crowd": 155,
+      "predicted_crowd": 135,
+      "capacity": 300
+    },
+    {
+      "timestamp": "2026-09-25T09:00:00+00:00",
+      "location_name": "Central Library Plaza",
+      "actual_crowd": 307,
+      "predicted_crowd": 272,
+      "capacity": 700
+    },
+    {
+      "timestamp": "2026-09-25T09:00:00+00:00",
+      "location_name": "Sports Arena Entrance",
+      "actual_crowd": 36,
+      "predicted_crowd": 104,
+      "capacity": 450
+    },
+    {
+      "timestamp": "2026-09-25T09:00:00+00:00",
+      "location_name": "Health Center Entrance",
+      "actual_crowd": 72,
+      "predicted_crowd": 64,
+      "capacity": 150
+    },
+    {
+      "timestamp": "2026-09-25T10:00:00+00:00",
+      "location_name": "Mechanical Quad Hub",
+      "actual_crowd": 526,
+      "predicted_crowd": 492,
+      "capacity": 600
+    },
+    {
+      "timestamp": "2026-09-25T10:00:00+00:00",
+      "location_name": "Food Court Square",
+      "actual_crowd": 129,
+      "predicted_crowd": 136,
+      "capacity": 550
+    },
+    {
+      "timestamp": "2026-09-25T10:00:00+00:00",
+      "location_name": "Research Park Hub",
+      "actual_crowd": 303,
+      "predicted_crowd": 295,
+      "capacity": 350
+    },
+    {
+      "timestamp": "2026-09-25T11:00:00+00:00",
+      "location_name": "CS & AI Complex Hub",
+      "actual_crowd": 623,
+      "predicted_crowd": 717,
+      "capacity": 800
+    },
+    {
+      "timestamp": "2026-09-25T11:00:00+00:00",
+      "location_name": "Auditorium Plaza",
+      "actual_crowd": 62,
+      "predicted_crowd": 89,
+      "capacity": 1000
+    },
+    {
+      "timestamp": "2026-09-25T11:00:00+00:00",
+      "location_name": "Beta Hostel Quad",
+      "actual_crowd": 93,
+      "predicted_crowd": 112,
+      "capacity": 500
+    },
+    {
+      "timestamp": "2026-09-25T12:00:00+00:00",
+      "location_name": "Admin Complex Hub",
+      "actual_crowd": 203,
+      "predicted_crowd": 198,
+      "capacity": 300
+    },
+    {
+      "timestamp": "2026-09-25T12:00:00+00:00",
+      "location_name": "Central Library Plaza",
+      "actual_crowd": 427,
+      "predicted_crowd": 367,
+      "capacity": 700
+    },
+    {
+      "timestamp": "2026-09-25T12:00:00+00:00",
+      "location_name": "Alpha Hostel Quad",
+      "actual_crowd": 126,
+      "predicted_crowd": 114,
+      "capacity": 500
+    },
+    {
+      "timestamp": "2026-09-25T12:00:00+00:00",
+      "location_name": "Health Center Entrance",
+      "actual_crowd": 74,
+      "predicted_crowd": 75,
+      "capacity": 150
+    },
+    {
+      "timestamp": "2026-09-25T13:00:00+00:00",
+      "location_name": "Mechanical Quad Hub",
+      "actual_crowd": 239,
+      "predicted_crowd": 222,
+      "capacity": 600
+    },
+    {
+      "timestamp": "2026-09-25T13:00:00+00:00",
+      "location_name": "Sports Arena Entrance",
+      "actual_crowd": 35,
+      "predicted_crowd": 58,
+      "capacity": 450
+    },
+    {
+      "timestamp": "2026-09-25T13:00:00+00:00",
+      "location_name": "Research Park Hub",
+      "actual_crowd": 139,
+      "predicted_crowd": 133,
+      "capacity": 350
+    },
+    {
+      "timestamp": "2026-09-25T14:00:00+00:00",
+      "location_name": "Electrical Sciences Hub",
+      "actual_crowd": 496,
+      "predicted_crowd": 399,
+      "capacity": 650
+    },
+    {
+      "timestamp": "2026-09-25T14:00:00+00:00",
+      "location_name": "Food Court Square",
+      "actual_crowd": 11,
+      "predicted_crowd": 41,
+      "capacity": 550
+    },
+    {
+      "timestamp": "2026-09-25T14:00:00+00:00",
+      "location_name": "Beta Hostel Quad",
+      "actual_crowd": 64,
+      "predicted_crowd": 107,
+      "capacity": 500
+    },
+    {
+      "timestamp": "2026-09-25T15:00:00+00:00",
+      "location_name": "CS & AI Complex Hub",
+      "actual_crowd": 701,
+      "predicted_crowd": 728,
+      "capacity": 800
+    },
+    {
+      "timestamp": "2026-09-25T15:00:00+00:00",
+      "location_name": "Central Library Plaza",
+      "actual_crowd": 588,
+      "predicted_crowd": 530,
+      "capacity": 700
+    },
+    {
+      "timestamp": "2026-09-25T15:00:00+00:00",
+      "location_name": "Alpha Hostel Quad",
+      "actual_crowd": 31,
+      "predicted_crowd": 115,
+      "capacity": 500
+    },
+    {
+      "timestamp": "2026-09-25T16:00:00+00:00",
+      "location_name": "Admin Complex Hub",
+      "actual_crowd": 169,
+      "predicted_crowd": 175,
+      "capacity": 300
+    },
+    {
+      "timestamp": "2026-09-25T16:00:00+00:00",
+      "location_name": "Mechanical Quad Hub",
+      "actual_crowd": 520,
+      "predicted_crowd": 528,
+      "capacity": 600
+    },
+    {
+      "timestamp": "2026-09-25T16:00:00+00:00",
+      "location_name": "Sports Arena Entrance",
+      "actual_crowd": 57,
+      "predicted_crowd": 80,
+      "capacity": 450
+    },
+    {
+      "timestamp": "2026-09-25T16:00:00+00:00",
+      "location_name": "Health Center Entrance",
+      "actual_crowd": 63,
+      "predicted_crowd": 64,
+      "capacity": 150
+    },
+    {
+      "timestamp": "2026-09-25T17:00:00+00:00",
+      "location_name": "Electrical Sciences Hub",
+      "actual_crowd": 158,
+      "predicted_crowd": 214,
+      "capacity": 650
+    },
+    {
+      "timestamp": "2026-09-25T17:00:00+00:00",
+      "location_name": "Food Court Square",
+      "actual_crowd": 371,
+      "predicted_crowd": 326,
+      "capacity": 550
+    },
+    {
+      "timestamp": "2026-09-25T17:00:00+00:00",
+      "location_name": "Research Park Hub",
+      "actual_crowd": 84,
+      "predicted_crowd": 107,
+      "capacity": 350
+    },
+    {
+      "timestamp": "2026-09-25T18:00:00+00:00",
+      "location_name": "CS & AI Complex Hub",
+      "actual_crowd": 221,
+      "predicted_crowd": 143,
+      "capacity": 800
+    },
+    {
+      "timestamp": "2026-09-25T18:00:00+00:00",
+      "location_name": "Auditorium Plaza",
+      "actual_crowd": 20,
+      "predicted_crowd": 76,
+      "capacity": 1000
+    },
+    {
+      "timestamp": "2026-09-25T18:00:00+00:00",
+      "location_name": "Beta Hostel Quad",
+      "actual_crowd": 302,
+      "predicted_crowd": 307,
+      "capacity": 500
+    },
+    {
+      "timestamp": "2026-09-25T19:00:00+00:00",
+      "location_name": "Admin Complex Hub",
+      "actual_crowd": 19,
+      "predicted_crowd": 21,
+      "capacity": 300
+    },
+    {
+      "timestamp": "2026-09-25T19:00:00+00:00",
+      "location_name": "Central Library Plaza",
+      "actual_crowd": 686,
+      "predicted_crowd": 635,
+      "capacity": 700
+    },
+    {
+      "timestamp": "2026-09-25T19:00:00+00:00",
+      "location_name": "Sports Arena Entrance",
+      "actual_crowd": 377,
+      "predicted_crowd": 384,
+      "capacity": 450
+    },
+    {
+      "timestamp": "2026-09-25T19:00:00+00:00",
+      "location_name": "Health Center Entrance",
+      "actual_crowd": 14,
+      "predicted_crowd": 32,
+      "capacity": 150
+    },
+    {
+      "timestamp": "2026-09-25T20:00:00+00:00",
+      "location_name": "Mechanical Quad Hub",
+      "actual_crowd": 81,
+      "predicted_crowd": 38,
+      "capacity": 600
+    },
+    {
+      "timestamp": "2026-09-25T20:00:00+00:00",
+      "location_name": "Food Court Square",
+      "actual_crowd": 462,
+      "predicted_crowd": 423,
+      "capacity": 550
+    },
+    {
+      "timestamp": "2026-09-25T20:00:00+00:00",
+      "location_name": "Research Park Hub",
+      "actual_crowd": 7,
+      "predicted_crowd": 20,
+      "capacity": 350
+    },
+    {
+      "timestamp": "2026-09-25T21:00:00+00:00",
+      "location_name": "Electrical Sciences Hub",
+      "actual_crowd": 18,
+      "predicted_crowd": 27,
+      "capacity": 650
+    },
+    {
+      "timestamp": "2026-09-25T21:00:00+00:00",
+      "location_name": "Auditorium Plaza",
+      "actual_crowd": 115,
+      "predicted_crowd": 64,
+      "capacity": 1000
+    },
+    {
+      "timestamp": "2026-09-25T21:00:00+00:00",
+      "location_name": "Beta Hostel Quad",
+      "actual_crowd": 422,
+      "predicted_crowd": 413,
+      "capacity": 500
+    },
+    {
+      "timestamp": "2026-09-25T22:00:00+00:00",
+      "location_name": "CS & AI Complex Hub",
+      "actual_crowd": 16,
+      "predicted_crowd": 38,
+      "capacity": 800
+    },
+    {
+      "timestamp": "2026-09-25T22:00:00+00:00",
+      "location_name": "Central Library Plaza",
+      "actual_crowd": 22,
+      "predicted_crowd": 353,
+      "capacity": 700
+    },
+    {
+      "timestamp": "2026-09-25T22:00:00+00:00",
+      "location_name": "Alpha Hostel Quad",
+      "actual_crowd": 455,
+      "predicted_crowd": 481,
+      "capacity": 500
+    },
+    {
+      "timestamp": "2026-09-25T23:00:00+00:00",
+      "location_name": "Admin Complex Hub",
+      "actual_crowd": 24,
+      "predicted_crowd": 17,
+      "capacity": 300
+    },
+    {
+      "timestamp": "2026-09-25T23:00:00+00:00",
+      "location_name": "Mechanical Quad Hub",
+      "actual_crowd": 12,
+      "predicted_crowd": 29,
+      "capacity": 600
+    },
+    {
+      "timestamp": "2026-09-25T23:00:00+00:00",
+      "location_name": "Sports Arena Entrance",
+      "actual_crowd": 49,
+      "predicted_crowd": 57,
+      "capacity": 450
+    },
+    {
+      "timestamp": "2026-09-25T23:00:00+00:00",
+      "location_name": "Health Center Entrance",
+      "actual_crowd": 3,
+      "predicted_crowd": 14,
+      "capacity": 150
+    }
+  ],
+  "trained_at": "2026-09-26T06:14:04.090297+00:00"
+}

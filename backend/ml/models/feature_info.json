@@ -1,0 +1,116 @@
+{
+  "model_name": "Gradient Boosting Regressor",
+  "model_version": "v1.0.0",
+  "features": [
+    "capacity",
+    "is_weekend",
+    "previous_crowd",
+    "lag_2_crowd",
+    "rolling_average_3h",
+    "previous_density",
+    "sin_hour",
+    "cos_hour",
+    "sin_dow",
+    "cos_dow",
+    "location_id_1",
+    "location_id_10",
+    "location_id_11",
+    "location_id_12",
+    "location_id_2",
+    "location_id_3",
+    "location_id_4",
+    "location_id_5",
+    "location_id_6",
+    "location_id_7",
+    "location_id_8",
+    "location_id_9",
+    "facility_type_ACADEMIC",
+    "facility_type_ADMIN",
+    "facility_type_AUDITORIUM",
+    "facility_type_CANTEEN",
+    "facility_type_HOSTEL",
+    "facility_type_LAB",
+    "facility_type_LIBRARY",
+    "facility_type_MEDICAL",
+    "facility_type_SPORTS"
+  ],
+  "numerical_features": [
+    "capacity",
+    "is_weekend",
+    "previous_crowd",
+    "lag_2_crowd",
+    "rolling_average_3h",
+    "previous_density",
+    "sin_hour",
+    "cos_hour",
+    "sin_dow",
+    "cos_dow"
+  ],
+  "categorical_features": [
+    "location_id",
+    "facility_type"
+  ],
+  "feature_importances": [
+    {
+      "feature": "previous_crowd",
+      "importance": 0.6617
+    },
+    {
+      "feature": "cos_hour",
+      "importance": 0.1072
+    },
+    {
+      "feature": "rolling_average_3h",
+      "importance": 0.044
+    },
+    {
+      "feature": "facility_type_ACADEMIC",
+      "importance": 0.0378
+    },
+    {
+      "feature": "sin_hour",
+      "importance": 0.0359
+    },
+    {
+      "feature": "capacity",
+      "importance": 0.0304
+    },
+    {
+      "feature": "lag_2_crowd",
+      "importance": 0.03
+    },
+    {
+      "feature": "previous_density",
+      "importance": 0.0135
+    },
+    {
+      "feature": "location_id_7",
+      "importance": 0.0105
+    },
+    {
+      "feature": "facility_type_CANTEEN",
+      "importance": 0.0099
+    },
+    {
+      "feature": "facility_type_AUDITORIUM",
+      "importance": 0.0036
+    },
+    {
+      "feature": "location_id_8",
+      "importance": 0.0023
+    },
+    {
+      "feature": "location_id_6",
+      "importance": 0.002
+    },
+    {
+      "feature": "facility_type_HOSTEL",
+      "importance": 0.0019
+    },
+    {
+      "feature": "facility_type_SPORTS",
+      "importance": 0.0019
+    }
+  ],
+  "trained_at": "2026-09-26T06:14:04.087304+00:00"
+}
