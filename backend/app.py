@@ -145,7 +145,20 @@ def create_app(config_name=None):
                     seed_campus_topology()
                     seed_crowd_data()
                     OptimizationConfig.get_or_create()
-            except Exception as e:
+            except Exception:
                 pass
 
+    # Wrap wsgi_app with path normalizer for serverless /api rewrites
+    class PathNormalizerMiddleware:
+        def __init__(self, wsgi_app):
+            self.wsgi_app = wsgi_app
+
+        def __call__(self, environ, start_response):
+            path = environ.get('PATH_INFO', '')
+            api_prefixes = ('/auth', '/campus', '/crowd', '/prediction', '/route', '/emergency', '/simulation', '/optimization', '/what-if', '/analytics', '/health')
+            if any(path.startswith(prefix) for prefix in api_prefixes):
+                environ['PATH_INFO'] = '/api' + path
+            return self.wsgi_app(environ, start_response)
+
+    app.wsgi_app = PathNormalizerMiddleware(app.wsgi_app)
     return app
