@@ -130,8 +130,21 @@ def create_app(config_name=None):
             data={"status": "online"}
         )
 
-    # Create tables
+    # Create tables and auto-seed default dataset if empty
     with app.app_context():
         db.create_all()
+        try:
+            from backend.models.user import User
+            if User.query.count() == 0:
+                from backend.seed.seed_users import seed_default_users
+                from backend.seed.seed_campus import seed_campus_topology
+                from backend.seed.seed_crowd import seed_crowd_data
+                from backend.models.optimization import OptimizationConfig
+                seed_default_users()
+                seed_campus_topology()
+                seed_crowd_data()
+                OptimizationConfig.get_or_create()
+        except Exception as e:
+            pass
 
     return app

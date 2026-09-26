@@ -9,11 +9,17 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key-campus-simulation-2026')
     JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY', 'jwt-secret-key-campus-simulation-2026')
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=24)
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_DATABASE_URI = os.environ.get(
-        'DATABASE_URL',
-        f"sqlite:///{os.path.join(basedir, 'campus_simulation.db')}"
-    )
+    # Handle serverless / Vercel writable temporary path and PostgreSQL prefixes
+    db_env_url = os.environ.get('DATABASE_URL')
+    if db_env_url and db_env_url.startswith('postgres://'):
+        db_env_url = db_env_url.replace('postgres://', 'postgresql://', 1)
+
+    if not db_env_url and os.environ.get('VERCEL'):
+        db_env_url = 'sqlite:////tmp/campus_simulation.db'
+    elif not db_env_url:
+        db_env_url = f"sqlite:///{os.path.join(basedir, 'campus_simulation.db')}"
+
+    SQLALCHEMY_DATABASE_URI = db_env_url
     CORS_HEADERS = 'Content-Type'
 
 class DevelopmentConfig(Config):
