@@ -12,12 +12,28 @@ class User(db.Model):
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
 
     def set_password(self, raw_password: str):
-        """Hash password using Bcrypt with salt."""
-        self.password_hash = bcrypt.generate_password_hash(raw_password).decode('utf-8')
+        """Hash password using Bcrypt with salt (and Werkzeug fallback)."""
+        try:
+            self.password_hash = bcrypt.generate_password_hash(raw_password).decode('utf-8')
+        except Exception:
+            from werkzeug.security import generate_password_hash
+            self.password_hash = generate_password_hash(raw_password)
 
     def check_password(self, raw_password: str) -> bool:
         """Verify password against stored hash."""
-        return bcrypt.check_password_hash(self.password_hash, raw_password)
+        if not self.password_hash:
+            return False
+        try:
+            if self.password_hash.startswith('$2b$') or self.password_hash.startswith('$2a$'):
+                return bcrypt.check_password_hash(self.password_hash, raw_password)
+            from werkzeug.security import check_password_hash
+            return check_password_hash(self.password_hash, raw_password)
+        except Exception:
+            from werkzeug.security import check_password_hash
+            try:
+                return check_password_hash(self.password_hash, raw_password)
+            except Exception:
+                return False
 
     def to_dict(self):
         """Serialize user object without sensitive information."""

@@ -14,8 +14,11 @@ class Config:
     if db_env_url and db_env_url.startswith('postgres://'):
         db_env_url = db_env_url.replace('postgres://', 'postgresql://', 1)
 
-    if not db_env_url and os.environ.get('VERCEL'):
-        db_env_url = 'sqlite:////tmp/campus_simulation.db'
+    is_serverless = bool(os.environ.get('VERCEL') or os.environ.get('VERCEL_ENV') or os.environ.get('AWS_LAMBDA_FUNCTION_NAME'))
+
+    if is_serverless:
+        if not db_env_url or ('sqlite' in db_env_url and '/tmp/' not in db_env_url):
+            db_env_url = 'sqlite:////tmp/campus_simulation.db'
     elif not db_env_url:
         db_env_url = f"sqlite:///{os.path.join(basedir, 'campus_simulation.db')}"
 
